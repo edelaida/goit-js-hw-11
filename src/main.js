@@ -20,8 +20,8 @@ function fetchUsers(q) {
     key: API_KEY,
     q,
     image_type: 'photo',
-    //orientation: 'horizontal',
-    //safesearch: true,
+    orientation: 'horizontal',
+    safesearch: true,
   });
 
   const BASE_URL = 'https://pixabay.com/api';
@@ -45,9 +45,9 @@ function subValue(ent) {
   fetchUsers(serchValue).then(response => {
     if (response.hits.length === 0) {
       iziToast.error({
-        position: 'topRight',
+        position: 'center',
         title: 'Error',
-        message: 'Sorry',
+        message: 'Sorry, there are no images matching your search query. Please try again!',
       });
     }
     pictures.innerHTML = markUp(response.hits);
@@ -65,11 +65,21 @@ function markUp(arr) {
  <li class="gallery-item">
   <a class="gallery-link" href="${largeImageURL}">
     <img class="gallery-image" src="${webformatURL}" 
-    alt="${tags}"/>
-    <p>likes: ${likes}</p>
-    <p>comments: ${comments}</p>
-    <p>downloads: ${downloads}</p>
-  </a>
+    alt="${tags}"/></a>
+    <ul class="gallery-info">
+          <li class="info-item">
+            <h4 class="info-title">likes</h4>
+            <p class="info-rez">${likes}</p> 
+          </li>
+          <li class="info-item">
+            <h4 class="info-title">comments</h4>
+            <p class="info-rez">${comments}</p> 
+           </li>
+          <li class="info-item">
+            <h4 class="info-title">downloads</h4>
+            <p class="info-rez">${downloads}</p> 
+           </li>
+        </ul> 
 </li>`
 })
  .join(""); 
