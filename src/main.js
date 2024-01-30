@@ -80,7 +80,7 @@ function markUp(arr) {
             <p class="info-rez">${downloads}</p> 
            </li>
         </ul> 
-</li>`
+  </li>`
 })
  .join(""); 
 }
