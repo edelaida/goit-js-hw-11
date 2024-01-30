@@ -17,5 +17,5 @@ import{S as c,i as u}from"./assets/vendor-9310f15c.js";(function(){const r=docum
             <p class="info-rez">${n}</p> 
            </li>
         </ul> 
-</li>`).join("")}
+  </li>`).join("")}
 //# sourceMappingURL=commonHelpers.js.map
